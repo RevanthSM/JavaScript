@@ -630,3 +630,213 @@ for(const [minute,event] of gameEvents){
   const half = minute <= 70? 'FIRST':'SECOND';
   console.log(`[${half} HALF] ${minute}:${event}`);
 }
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log('B737'[0]);
+
+
+
+//Methods
+//1. .indexOf() & .lastIndexOf()
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('r'));
+// console.log(airline.lastIndexOf('Portugal'));
+// console.log(airline.indexOf('Portugal'));
+
+//2. .length
+// console.log(airline.length);
+// console.log('B737'.length);
+
+//3. .slice()
+// console.log(airline.slice(4));
+// console.log(airline.slice(4,7));
+// console.log(airline.slice(0,airline.indexOf(' ')));
+// console.log(airline.slice(airline.lastIndexOf(' ')));
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1,-1));
+
+//4. .trim()
+
+//5. .toUpperCase() & .toLowerCase()
+
+// const checkMiddleSeat = function(seat){
+  // B and E are middle seats
+//   const s = seat.slice(-1);
+//   if(s === 'B' || s === 'E') console.log('You got the middle seat ');
+//   else console.log('You got lucky');
+// } 
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('3E');
+
+// console.log(new String('Revanth'));
+// console.log(typeof new String('Revanth'));
+
+// console.log(typeof new String('Revanth').slice(1));
+/////////////////////////////////////////////////////////
+
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
+
+//Fix capitalization in name 
+// const passenger = 'REVANTH'; // REVANTH
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect = passengerLower[0].toUpperCase()+passengerLower.slice(1);
+
+// console.log(passengerCorrect);
+
+// Comparing email 
+// const email = 'revanth@gmail.com';
+// const loginEmail= '   Revanth@gmail.Com \n';
+
+// More lines ❌
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+// Less lines ✅
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
+// console.log(email===normalizedEmail);
+
+// replacing  ( .replace() & .replaceAll() )
+// const priceIN = '28,897₹';
+// const priceUS = priceIN.replace('₹','$').replace(',','.');
+// console.log(priceUS);
+
+// const announcement = 'All passengers come to boarding door 23. Boarding door 31'
+// console.log(announcement.replace('door','gate'));
+// console.log(announcement.replaceAll('door','gate'));
+//OR
+// console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans (startsWith() & endsWith())
+// const plane1 = 'Airbus A329ne0';
+// console.log(plane1.includes('A329'));
+// console.log(plane.includes('Boring'));
+// console.log(plane1.startsWith('A329'));
+
+// if(plane1.startsWith('Airbus') && plane1.endsWith('neo')) {
+//   console.log('Part of the NEW AirBus family');
+// }
+
+// Practice exercise
+// const checkBaggage = function(items){
+//   const baggage = items.toLowerCase();
+//   if(baggage.includes('knife') && baggage.includes('gun')){
+//     console.log('You are not allowed in the plane');
+//   }
+//   else console.log('Welcome aboard!');
+// }
+
+// checkBaggage('I have a laptop, some food and a pocket knife');
+// checkBaggage('Socks and camera');
+// checkBaggage('Got some snacks and a gun for protection');
+
+// Split and join
+// console.log('a+very+nice+string'.split('+'));
+// console.log('Revanth Sai'.split(' '));
+
+// const [firstName, lastName] = 'Revanth Sai'.split(' ');
+
+// const Name = ['Mr.', firstName,lastName.toUpperCase()].join(' ');
+// console.log(Name);
+
+// const capitalizedName = function(name){
+//   const names = name.split(' ');
+//   const namesUpper = []
+
+  // for( const n of names){
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0],n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
+// }
+// capitalizedName('Jessica ann smith davis');
+// capitalizedName('revanth sai')
+
+// Padding a string
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(25,'+').padEnd(30,'+'));
+// console.log('Revanth'.padStart(25,'+').padEnd(30,'+'));
+
+// const maskCreditCard = function(number){
+//   const str = number + '';
+//   const last = str.slice(-4);
+//   return last.padStart(str.length,'*');
+// }
+
+// console.log(maskCreditCard('489765432109876'));
+// console.log(maskCreditCard('6534234565653434432424'));
+
+//Repeat
+// const message2 = 'Bad weather... All Departures Deplayed...';
+// console.log(message2.repeat(3));
+
+// const planesInline = function(n){
+//   console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+// }
+// planesInline(5);
+// planesInline(3);
+// planesInline(12);
+
+////////////////////////////////////////////////////////////
+
+// const camelCase = function(sentence){
+
+//   const converted_sentence= sentence.split(' ');
+
+//   console.log(converted_sentence);
+//   const Uppercaseletters = [];
+//   for( const word of converted_sentence){
+//     Uppercaseletters.push(word[0].toUpperCase()+word.slice(1));
+//     // console.log(final_sentence);
+//   }
+//   console.log(Uppercaseletters);
+// }
+// camelCase('Hey fuck you everyone');
+// 1.
+// const camelCase2 = function(sentence){
+//   const space_remover = sentence.split(' ');
+//   const underscore_remover1 = space_remover.join(' ').split('_').join('');
+//   const joining_them = underscore_remover1.split(' ');
+//   const Upperletters = [];
+//   for(const n of joining_them){
+//     Upperletters.push(n[0].toUpperCase()+n.slice(1));
+//   }  
+//   console.log(Upperletters);
+  
+// }
+// camelCase2('Revanth_Sai Samarth_Kadam Santosh_Inchal Next_what_not');
+
+//2. Connect textarea and button to the javascript
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click',function(){
+
+const text = document.querySelector('textarea').value;
+const rows = text.split('\n');
+
+for(const [i, row] of rows.entries()){
+  const [first,second] =  row.toLowerCase().trim().split('_');
+  console.log(row,first,second);
+  console.log(i);  // Array index
+  console.log(row); // Array value
+  const output = `${first}${second.replace(
+    second[0],
+    second[0].toUpperCase()
+)}`;
+  console.log(`${output.padEnd(20)}${'✅'.repeat(i+1)}`);
+}
+
+});
+
+document.querySelector('button').addEventListener('Enter',function(){
+
+
+})
